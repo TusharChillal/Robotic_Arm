@@ -24,13 +24,13 @@ void setup() {
 }
 
 void loop() {
-    // Read potentiometer values (0-4095 for ESP32 ADC)
+    // Read potentiometer values (0-1023 for ESP32 ADC)
     int val1 = analogRead(pot1);
     int val2 = analogRead(pot2);
     int val3 = analogRead(pot3);
     int val4 = analogRead(pot4);
 
-    // Map values from 0-4095 to servo range (0-180 degrees)
+    // Map values from 0-1023 to servo range (0-180 degrees)
     val1 = map(val1, 0, 1023, 0, 180);
     val2 = map(val2, 0, 1023, 0, 180);
     val3 = map(val3, 0, 1023, 0, 180);
