@@ -24,7 +24,7 @@ void setup() {
 }
 
 void loop() {
-    // Read potentiometer values (0-1023 for ESP32 ADC)
+    // Read potentiometer values (0-1023 for Arduino UNO ADC)
     int val1 = analogRead(pot1);
     int val2 = analogRead(pot2);
     int val3 = analogRead(pot3);
