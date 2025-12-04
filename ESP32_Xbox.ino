@@ -29,13 +29,13 @@ GamepadPtr myGamepad = nullptr;
 
 // Callback function when a gamepad is connected
 void onConnectedGamepad(GamepadPtr gp) {
-    Serial.println("🎮 Gamepad Connected!");
+    Serial.println("Gamepad Connected!");
     myGamepad = gp;
 }
 
 // Callback function when a gamepad is disconnected
 void onDisconnectedGamepad(GamepadPtr gp) {
-    Serial.println("❌ Gamepad Disconnected!");
+    Serial.println("Gamepad Disconnected!");
     myGamepad = nullptr;
 }
 
@@ -98,7 +98,7 @@ void loop() {
             baseAngle2 = targetAngle2;
             baseAngle3 = targetAngle3;
             baseAngle4 = targetAngle4;
-            Serial.println("🛑 New base position set!");
+            Serial.println("New base position set!");
         }
 
         // Detect if RT is released and set new base position
@@ -107,7 +107,7 @@ void loop() {
         } else if (RT_wasPressed) {
             baseAngle1 = currentAngle1;  // Save current RT-based position
             RT_wasPressed = false;
-            Serial.println("📌 RT released - New base position for Servo1");
+            Serial.println("RT released - New base position for Servo1");
         }
 
         // Detect if LT is released and set new base position
@@ -116,7 +116,7 @@ void loop() {
         } else if (LT_wasPressed) {
             baseAngle4 = currentAngle4;  // Save current LT-based position
             LT_wasPressed = false;
-            Serial.println("📌 LT released - New base position for Servo4");
+            Serial.println("LT released - New base position for Servo4");
         }
 
         // Gradually move current angles to target angles for smooth movement
@@ -133,7 +133,7 @@ void loop() {
 
         // If Button A is pressed, reset all servos to 90 degrees
         if (buttons & BUTTON_A) {
-            Serial.println("🅰️ Resetting Servos to 90°...");
+            Serial.println("Resetting Servos to 90°");
             baseAngle1 = baseAngle2 = baseAngle3 = baseAngle4 = 90;
             targetAngle1 = targetAngle2 = targetAngle3 = targetAngle4 = 90;
             currentAngle1 = currentAngle2 = currentAngle3 = currentAngle4 = 90;
